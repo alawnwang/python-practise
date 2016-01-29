@@ -1,0 +1,30 @@
+#!/usr/bin/python
+while True:
+	name = raw_input('plz input yourname:')
+	if name == 'alawn':
+		password = raw_input('plz input your passwd')
+		passwd = '520'
+		while password != passwd:
+			password = raw_input('error!plz try again:')
+		else:
+			print 'Welcome!\n'
+			while True:
+				match_yes = 0
+				name = raw_input('\033[32mplz input the name who you want to search:\033[0m')
+				contact_file = file('contact_list.txt')
+				while True:
+					line = contact_file.readline()
+					if len(line) == 0:
+						break
+					if name in line:
+						print 'match item: \033[36,lm%s\033[0m' % line
+						#match_yes = 1
+					else:
+						match = 'NO'
+						#print 'sorry!'
+					if match == 'NO':
+						print 'no match item'
+				#if match_yes == 0:
+					#print ' No match!'
+	else:
+			print 'sorry,user %s not found' % name			
